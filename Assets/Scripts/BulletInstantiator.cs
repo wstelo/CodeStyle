@@ -5,6 +5,7 @@ public class BulletInstantiator : MonoBehaviour
 {
     [SerializeField] private Mover _prefab;
     [SerializeField] private TargetCollector _objectWithPoints;
+
     private float _timeWaitShooting = 3;
     private WaitForSeconds _wait;
     
