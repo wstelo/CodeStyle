@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1940563488846369587, guid: a0446ece2644d70449b1702dc9f7df34, type: 3}
-  _objectWithPoints: {fileID: 8083736586132737855}
+  _objectWithPoints: {fileID: 8083736586132737856}
 --- !u!4 &2001682221
 Transform:
   m_ObjectHideFlags: 0
@@ -631,6 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2422837729369149453}
+  - component: {fileID: 8083736586132737856}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -638,3 +639,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8083736586132737856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083736586132737855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e58d1c13684814f9cebcf81208ce29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

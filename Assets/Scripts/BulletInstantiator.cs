@@ -4,7 +4,7 @@ using UnityEngine;
 public class BulletInstantiator : MonoBehaviour
 {
     [SerializeField] private Mover _prefab;
-    [SerializeField] private GameObject _objectWithPoints;
+    [SerializeField] private TargetCollector _objectWithPoints;
 
     private float _timeWaitShooting = 3;
 
@@ -20,7 +20,7 @@ public class BulletInstantiator : MonoBehaviour
         while (enabled)
         {
             var newBullet = Instantiate(_prefab, transform.position, Quaternion.identity);
-            newBullet.Initialize(_objectWithPoints.transform);
+            newBullet.Initialize(_objectWithPoints);
 
             yield return wait;
         }
