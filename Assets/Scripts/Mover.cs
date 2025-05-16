@@ -25,10 +25,7 @@ public class Mover : MonoBehaviour
 
     private void Update()
     {
-        if(_currentTarget != null)
-        {
             Move();
-        }
     }
 
     public void Initialize(TargetCollector points)
@@ -38,25 +35,19 @@ public class Mover : MonoBehaviour
 
     private void Move()
     {
-        float _distanceToTarget = 0.5f;
+        float distanceToTarget = 0.5f;
 
-        if (transform.position.IsEnoughClose(_currentTarget.position, _distanceToTarget))
+        if (transform.position.IsEnoughClose(_currentTarget.position, distanceToTarget))
         {
-            _currentTargetIndex++;
-            _currentTarget = GetNextPoint(_currentTargetIndex);
+            _currentTarget = GetNextPoint();
         }
 
         transform.position = Vector3.MoveTowards(transform.position, _currentTarget.position, _speed * Time.deltaTime);
     }
 
-    private Transform GetNextPoint(int targetIndex)
+    private Transform GetNextPoint()
     {
-        int _minTargetIndex = 0;
-
-        if (targetIndex >= _spawnPoints.Count)
-        {
-            _currentTargetIndex = _minTargetIndex;
-        }
+        _currentTargetIndex = (++_currentTargetIndex) % _spawnPoints.Count;
 
         return _spawnPoints[_currentTargetIndex];
     }

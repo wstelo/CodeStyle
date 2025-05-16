@@ -7,23 +7,17 @@ public class TargetCollector : MonoBehaviour
 
     private void Awake()
     {
-        RefreshChildArray();
-    }
-
-    private void RefreshChildArray()
-    {
         int pointCount = transform.childCount;
+        Debug.Log(pointCount);
 
-        if(pointCount > 0 )
+        if (pointCount == 0)
         {
-            for (int i = 0; i < pointCount; i++)
-            {
-                TargetPoints.Add(transform.GetChild(i));
-            }
+            throw new System.Exception("Пустой список целей.");
         }
-        else
+
+        for (int i = 0; i < pointCount; i++)
         {
-            Debug.Log("Отсутствует таргет.");
+            TargetPoints.Add(transform.GetChild(i));
         }
     }
 }
